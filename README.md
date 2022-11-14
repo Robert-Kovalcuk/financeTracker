@@ -1,44 +1,29 @@
-# default
+## EXAMPLE GET SET DATA
 
-## Project setup
+```import {getFirestore, collection, getDocs, addDoc, DocumentData, DocumentReference} from "firebase/firestore"
+import firebaseApp from "@/plugins/firebase/index"
+import Merchant from "@/data/merchant"
 
+const firestore = getFirestore(firebaseApp)
+
+class Merchants {
+	private static readonly dataCollectionReference = collection(firestore, "merchants")
+
+	static async getMerchants(): Promise<Merchant[]> {
+		const documentDataQuerySnapshot = await getDocs(this.dataCollectionReference)
+
+		if(documentDataQuerySnapshot.empty)
+			return []
+
+		return documentDataQuerySnapshot.docs.map(doc => {
+			return Merchant.fromApi(doc.data())
+		})
+	}
+
+	static async setMerchant(merchant: Merchant): Promise<DocumentReference<DocumentData>> {
+		return addDoc(this.dataCollectionReference, merchant)
+	}
+}
+
+export default Merchants
 ```
-# yarn
-yarn
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-```
-
-### Compiles and minifies for production
-
-```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
