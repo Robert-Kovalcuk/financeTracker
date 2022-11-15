@@ -1,3 +1,15 @@
+## ADD META ATTRIBUTE TO VUE ROUTE
+```
+
+import 'vue-router'
+
+declare module 'vue-router' {
+	interface RouteMeta {
+		requiresAuth: boolean
+	}
+}
+
+```
 ## ROUTER AUTH GUARD
 ```
 
