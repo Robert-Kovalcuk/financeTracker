@@ -4,7 +4,7 @@
 
 https://user-images.githubusercontent.com/118119299/202072593-51f7cd83-5d9b-4199-aef6-90647a35dab7.mp4
 
-```
+```typescript
 function mouseEnterOnCalendarDayAnimationListener(e: Event) {
 	if(!Array.of(...document.querySelectorAll(".day-wrapper")).some(el => el === (e.target as Element)))
 		return
@@ -22,7 +22,7 @@ function mouseEnterOnCalendarDayAnimationListener(e: Event) {
 }
 ```
 ### AUTHENTICATION STATE HANDLED BY VUE REACTIVE
-```
+```typescript
 import {UserCredential} from "firebase/auth"
 import {reactive, watch} from "vue"
 
@@ -88,7 +88,7 @@ export default new Authentication()
 ```
 
 ### ADD META ATTRIBUTE TO VUE ROUTE
-```
+```typescript
 
 import 'vue-router'
 
@@ -100,7 +100,7 @@ declare module 'vue-router' {
 
 ```
 ### ROUTER AUTH GUARD
-```
+```typescript
 
 const canAccessRoute = async function(to: RouteLocationNormalized): Promise<RouteLocationNamedRaw | null> {
 	const needsAuth = to.matched.some(e => e.meta.requiresAuth)
@@ -145,7 +145,7 @@ export default function (router: Router): void {
 }
 ```
 ### EXAMPLE DATA
-```
+```typescript
 import {EDefaultCategory} from "@/data/enums/eDefaultCategory"
 import {Nameable} from "@/data/base/nameable"
 import {DocumentData} from "firebase/firestore"
@@ -169,7 +169,8 @@ export default class Item extends Nameable {
 }
 ```
 ### EXAMPLE GET SET DATA
-```import {getFirestore, collection, getDocs, addDoc, DocumentData, DocumentReference} from "firebase/firestore"
+```typescript
+import {getFirestore, collection, getDocs, addDoc, DocumentData, DocumentReference} from "firebase/firestore"
 import firebaseApp from "@/plugins/firebase/index"
 import Merchant from "@/data/merchant"
 
