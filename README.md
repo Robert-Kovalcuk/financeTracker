@@ -174,9 +174,7 @@ class Merchants {
 export default Merchants
 ```
 ## EXAMPLE TOGGLING CALENDAR COMPONENT ON ICON CLICK AND OUTSIDE CALENDAR CLICK
-```
-![image](https://user-images.githubusercontent.com/118119299/202057659-567d852f-c144-4615-9064-36301515838f.png)
-```
+![image](https://user-images.githubusercontent.com/118119299/202057917-d2f9a527-acf3-4671-b346-315b7718ccd9.png)
 ```
 function toggleCalendar() {
 	isCalendarHidden.value = !isCalendarHidden.value
