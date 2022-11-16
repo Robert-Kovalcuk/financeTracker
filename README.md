@@ -1,6 +1,6 @@
-# A project created (not finished yet) to showcase some of my skills with Javascript/Typescript, Vue 3x, Firebase. Vuetify3 is added to the project, but barely used.
+## A project created (not finished yet) to showcase some of my skills with Javascript/Typescript, Vue 3x, Firebase, HTML, CSS. Vuetify3 is added to the project, but barely used.
 
-## EXAMPLE TOGGLING CALENDAR COMPONENT ON ICON CLICK AND OUTSIDE CALENDAR CLICK
+### EXAMPLE TOGGLING CALENDAR COMPONENT ON ICON CLICK AND OUTSIDE CALENDAR CLICK
 
 https://user-images.githubusercontent.com/118119299/202072593-51f7cd83-5d9b-4199-aef6-90647a35dab7.mp4
 
@@ -21,7 +21,7 @@ function mouseEnterOnCalendarDayAnimationListener(e: Event) {
 	element.addEventListener("animationend", (animationEndListener))
 }
 ```
-## AUTHENTICATION STATE HANDLED BY VUE REACTIVE
+### AUTHENTICATION STATE HANDLED BY VUE REACTIVE
 ```
 import {UserCredential} from "firebase/auth"
 import {reactive, watch} from "vue"
@@ -87,7 +87,7 @@ enum Status {
 export default new Authentication()
 ```
 
-## ADD META ATTRIBUTE TO VUE ROUTE
+### ADD META ATTRIBUTE TO VUE ROUTE
 ```
 
 import 'vue-router'
@@ -99,7 +99,7 @@ declare module 'vue-router' {
 }
 
 ```
-## ROUTER AUTH GUARD
+### ROUTER AUTH GUARD
 ```
 
 const canAccessRoute = async function(to: RouteLocationNormalized): Promise<RouteLocationNamedRaw | null> {
@@ -144,7 +144,7 @@ export default function (router: Router): void {
 	})
 }
 ```
-## EXAMPLE DATA
+### EXAMPLE DATA
 ```
 import {EDefaultCategory} from "@/data/enums/eDefaultCategory"
 import {Nameable} from "@/data/base/nameable"
@@ -168,7 +168,7 @@ export default class Item extends Nameable {
 	}
 }
 ```
-## EXAMPLE GET SET DATA
+### EXAMPLE GET SET DATA
 ```import {getFirestore, collection, getDocs, addDoc, DocumentData, DocumentReference} from "firebase/firestore"
 import firebaseApp from "@/plugins/firebase/index"
 import Merchant from "@/data/merchant"
