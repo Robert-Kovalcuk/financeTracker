@@ -1,3 +1,4 @@
+# A project created (not finished yet) to showcase some of my skills with Javascript/Typescript, Vue 3x, Firebase. Vuetify3 is added to the project, but barely used.
 
 ## EXAMPLE TOGGLING CALENDAR COMPONENT ON ICON CLICK AND OUTSIDE CALENDAR CLICK
 
