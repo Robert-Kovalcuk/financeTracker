@@ -13,6 +13,7 @@ v-card(elevation="2").loginFormCard.d-flex.flex-column.align-center
 
 <script lang="ts" setup>
 	import Authentication from "@/managers/authentication/index"
+	import UserPreferences from "@/managers/firestore/userPreferences"
 	import {ref} from "vue"
 
 	let email = ref("")
@@ -23,6 +24,11 @@ v-card(elevation="2").loginFormCard.d-flex.flex-column.align-center
 	const login = () => {
 		loginStarted.value = true
 		Authentication.login(email.value, password.value).then(_ => {
+			UserPreferences.getPreferences().then(data => {
+				UserPreferences.updateBudget(89).then(value => {
+					console.log(value)
+				})
+			})
 			loginStarted.value = false
 		})
 	}

@@ -1,5 +1,6 @@
 import {EDefaultCategory} from "@/data/enums/eDefaultCategory"
 import {Nameable} from "@/data/base/nameable"
+import {DocumentData} from "firebase/firestore"
 
 export default class Item extends Nameable {
 	private price: number
@@ -12,5 +13,9 @@ export default class Item extends Nameable {
 		this.price = price
 		this.created = created
 		this.category = category
+	}
+
+	static fromApi(data: DocumentData): Item {
+		return new Item(data["name"], data["number"], new Date(data["date"]), data["category"])
 	}
 }

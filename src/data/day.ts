@@ -1,8 +1,8 @@
 import Item from "@/data/item"
 
 export default class Day {
-	private date: Date
-	private items: Item[]
+	public date: Date
+	public items: Item[]
 
 	constructor(date: Date, items: Item[]) {
 		this.date = date
