@@ -22,6 +22,7 @@ function mouseEnterOnCalendarDayAnimationListener(e: Event) {
 }
 ```
 ### AUTHENTICATION STATE HANDLED BY VUE REACTIVE
+---
 ```typescript
 import {UserCredential} from "firebase/auth"
 import {reactive, watch} from "vue"
@@ -88,6 +89,7 @@ export default new Authentication()
 ```
 
 ### ADD META ATTRIBUTE TO VUE ROUTE
+---
 ```typescript
 
 import 'vue-router'
@@ -100,6 +102,7 @@ declare module 'vue-router' {
 
 ```
 ### ROUTER AUTH GUARD
+---
 ```typescript
 
 const canAccessRoute = async function(to: RouteLocationNormalized): Promise<RouteLocationNamedRaw | null> {
@@ -145,6 +148,7 @@ export default function (router: Router): void {
 }
 ```
 ### EXAMPLE DATA
+---
 ```typescript
 import {EDefaultCategory} from "@/data/enums/eDefaultCategory"
 import {Nameable} from "@/data/base/nameable"
@@ -169,6 +173,7 @@ export default class Item extends Nameable {
 }
 ```
 ### EXAMPLE GET SET DATA
+---
 ```typescript
 import {getFirestore, collection, getDocs, addDoc, DocumentData, DocumentReference} from "firebase/firestore"
 import firebaseApp from "@/plugins/firebase/index"
