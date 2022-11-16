@@ -173,3 +173,30 @@ class Merchants {
 
 export default Merchants
 ```
+## EXAMPLE TOGGLING CALENDAR COMPONENT ON ICON CLICK AND OUTSIDE CALENDAR CLICK
+```
+![image](https://user-images.githubusercontent.com/118119299/202057659-567d852f-c144-4615-9064-36301515838f.png)
+```
+```
+function toggleCalendar() {
+	isCalendarHidden.value = !isCalendarHidden.value
+
+	if(!isCalendarHidden.value) {
+		const listener = (e: Event) => {
+			const calendar = document.querySelector(".container-content")
+			
+			if(!calendar) {
+				document.removeEventListener("click", listener)
+				return
+			}
+	
+			if(!calendar.contains(e.target as Element)) {
+				isCalendarHidden.value = true
+				removeEventListener("click", listener)
+			}
+		}
+
+		document.addEventListener("click", listener)
+	}
+}
+```
