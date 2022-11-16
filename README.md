@@ -1,3 +1,31 @@
+
+## EXAMPLE TOGGLING CALENDAR COMPONENT ON ICON CLICK AND OUTSIDE CALENDAR CLICK
+
+https://user-images.githubusercontent.com/118119299/202072593-51f7cd83-5d9b-4199-aef6-90647a35dab7.mp4
+
+```
+function toggleCalendar() {
+	isCalendarHidden.value = !isCalendarHidden.value
+
+	if(!isCalendarHidden.value) {
+		const listener = (e: Event) => {
+			const calendar = document.querySelector(".container-content")
+			
+			if(!calendar) {
+				document.removeEventListener("click", listener)
+				return
+			}
+	
+			if(!calendar.contains(e.target as Element)) {
+				isCalendarHidden.value = true
+				removeEventListener("click", listener)
+			}
+		}
+
+		document.addEventListener("click", listener)
+	}
+}
+```
 ## AUTHENTICATION STATE HANDLED BY VUE REACTIVE
 ```
 import {UserCredential} from "firebase/auth"
@@ -172,33 +200,4 @@ class Merchants {
 }
 
 export default Merchants
-```
-## EXAMPLE TOGGLING CALENDAR COMPONENT ON ICON CLICK AND OUTSIDE CALENDAR CLICK
-
-
-https://user-images.githubusercontent.com/118119299/202065147-a8f9890c-154c-48b8-9d50-a9d65cb303f3.mp4
-
-
-```
-function toggleCalendar() {
-	isCalendarHidden.value = !isCalendarHidden.value
-
-	if(!isCalendarHidden.value) {
-		const listener = (e: Event) => {
-			const calendar = document.querySelector(".container-content")
-			
-			if(!calendar) {
-				document.removeEventListener("click", listener)
-				return
-			}
-	
-			if(!calendar.contains(e.target as Element)) {
-				isCalendarHidden.value = true
-				removeEventListener("click", listener)
-			}
-		}
-
-		document.addEventListener("click", listener)
-	}
-}
 ```
