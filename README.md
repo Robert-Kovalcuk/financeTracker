@@ -4,26 +4,20 @@
 https://user-images.githubusercontent.com/118119299/202072593-51f7cd83-5d9b-4199-aef6-90647a35dab7.mp4
 
 ```
-function toggleCalendar() {
-	isCalendarHidden.value = !isCalendarHidden.value
+function mouseEnterOnCalendarDayAnimationListener(e: Event) {
+	if(!Array.of(...document.querySelectorAll(".day-wrapper")).some(el => el === (e.target as Element)))
+		return
 
-	if(!isCalendarHidden.value) {
-		const listener = (e: Event) => {
-			const calendar = document.querySelector(".container-content")
-			
-			if(!calendar) {
-				document.removeEventListener("click", listener)
-				return
-			}
-	
-			if(!calendar.contains(e.target as Element)) {
-				isCalendarHidden.value = true
-				removeEventListener("click", listener)
-			}
-		}
+	const element = (e.target as Element)
 
-		document.addEventListener("click", listener)
+	element.classList.add("day-wrapper-animation")
+
+	const animationEndListener = (e: Event) => {
+		element.classList.remove("day-wrapper-animation")
+		e.target.removeEventListener(mouseEnterOnCalendarDayAnimationListener)
 	}
+
+	element.addEventListener("animationend", (animationEndListener))
 }
 ```
 ## AUTHENTICATION STATE HANDLED BY VUE REACTIVE
