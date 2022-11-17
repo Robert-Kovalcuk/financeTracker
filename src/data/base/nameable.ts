@@ -1,11 +1,7 @@
 export abstract class Nameable {
-	private readonly _name: string
+	public name: string
 
 	protected constructor(name: string) {
-		this._name = name
-	}
-
-	public get name(): string {
-		return this._name
+		this.name = name
 	}
 }

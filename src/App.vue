@@ -4,7 +4,6 @@ v-app(id="app")
 </template>
 
 <script setup lang="ts">
-console.log(Date.now())
 </script>
 <style scoped>
 	#app {

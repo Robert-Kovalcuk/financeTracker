@@ -16,7 +16,7 @@ export default [
 	{
 		path: "/main",
 		name: "main",
-		component: MainView,
+		component: HomeView,
 		meta: {
 			requiresAuth: true,
 		}

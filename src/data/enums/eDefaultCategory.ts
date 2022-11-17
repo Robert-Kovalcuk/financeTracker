@@ -1,7 +1,7 @@
 export enum EDefaultCategory {
-	Groceries,
-	Restaurant,
-	FastFood,
-	Entertainment,
-	Home,
+	Groceries = "Groceries",
+	Restaurant = "Restaurant",
+	FastFood = "FastFood",
+	Entertainment = "Entertainment",
+	Home = "Home",
 }

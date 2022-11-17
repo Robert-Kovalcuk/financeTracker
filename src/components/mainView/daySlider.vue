@@ -87,7 +87,7 @@ function animateContentRight() {
 	overflow: hidden;
 	display: flex;
 	margin: 2px auto;
-	width: 80%;
+	width: 100%;
 	height: 4rem;
 }
 .date {

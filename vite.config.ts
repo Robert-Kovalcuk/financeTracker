@@ -9,7 +9,15 @@ import { fileURLToPath, URL } from 'node:url'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+	  vue({
+		  template: {
+			  compilerOptions: {
+				  isCustomElement: (tag) => {
+					  return tag.startsWith('ion-') // (return true)
+				  }
+			  }
+		  }
+	  }),
     // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
     vuetify({
       autoImport: true,
